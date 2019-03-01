@@ -1,4 +1,4 @@
-package org.test.bookpub;
+package org.example.bookpub;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

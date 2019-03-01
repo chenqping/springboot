@@ -1,7 +1,7 @@
-package org.test.bookpub.repository;
+package org.example.bookpub.repository;
 
+import org.example.bookpub.entity.Book;
 import org.springframework.data.repository.CrudRepository;
-import org.test.bookpub.entity.Book;
 
 public interface BookRePository extends CrudRepository<Book, Long> {
     public Book findBookByIsbn(String isbn);

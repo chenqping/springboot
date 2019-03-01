@@ -1,4 +1,4 @@
-package org.test.bookpub.entity;
+package org.example.bookpub.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

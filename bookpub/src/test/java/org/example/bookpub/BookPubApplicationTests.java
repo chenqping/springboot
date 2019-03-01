@@ -1,4 +1,4 @@
-package org.test.bookpub;
+package org.example.bookpub;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
