@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -30,6 +31,11 @@ public class BookController {
     @RequestMapping(value = "/{isbn}/reviewers", method = RequestMethod.GET)
     public List<Reviewer> getReviewers(@PathVariable("isbn") Book book){
         return book.getReviewers();
+    }
+
+    @RequestMapping(value = "/session", method = RequestMethod.GET)
+    public String getSessionId(HttpServletRequest request){
+        return request.getSession().getId();
     }
 
     @InitBinder
