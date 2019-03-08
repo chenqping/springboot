@@ -1,6 +1,7 @@
 package com.example.bookpub;
 
 import com.example.bookpubstarter.dbcount.DbCountRunner;
+import com.example.bookpubstarter.dbcount.EnableDbCounting;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.boot.SpringApplication;
@@ -54,6 +55,7 @@ dependency-check, depends-on and scope.
 
 @SpringBootApplication
 @EnableScheduling
+@EnableDbCounting
 public class BookPubApplication {
 
 	public static void main(String[] args) {
@@ -65,8 +67,7 @@ public class BookPubApplication {
 		return new StartupRunner();
 	}
 
-	protected final Log logger = LogFactory.getLog(getClass());
-
+/*	protected final Log logger = LogFactory.getLog(getClass());
 	@Bean
 	public DbCountRunner dbCountRunner(Collection<CrudRepository> repositories) {
 		return new DbCountRunner(repositories) {
@@ -75,5 +76,5 @@ public class BookPubApplication {
 				logger.info("Manually Declared DbCountRunner");
 			}
 		};
-	}
+	}*/
 }
