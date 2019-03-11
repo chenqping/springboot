@@ -11,6 +11,16 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/*
+@Controller: This is a Spring stereotype annotation that is similar to @Bean and @Repository and
+declares the annotated class as an MVC
+@ResponseBody: This is a Spring MVC annotation indicating that responses from the web-requestmapped
+methods constitute the entire content of the HTTP response body payload, which is typical for the
+RESTful applications
+@RequestMapping: This is a Spring MVC annotation indicating that requests to /books/* URL will be
+routed to this controller.
+* */
+
 @RestController
 @RequestMapping("/books")
 public class BookController {
