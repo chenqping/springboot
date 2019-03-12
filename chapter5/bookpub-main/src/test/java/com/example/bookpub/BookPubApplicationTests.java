@@ -12,9 +12,11 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.MediaType;
 import org.springframework.jdbc.datasource.init.DatabasePopulatorUtils;
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.context.WebApplicationContext;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.sql.DataSource;
 
@@ -27,6 +29,8 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@Transactional
+@Sql(scripts = "classpath:/test-data.sql")
 public class BookPubApplicationTests {
 	@Autowired
 	private WebApplicationContext context;
@@ -51,14 +55,14 @@ public class BookPubApplicationTests {
 		mockMvc = webAppContextSetup(context).build();
 	}
 
-	@Before
+/*	@Before
 	public void loadDataFixtures(){
 		if (loadDataFixtures){
 			ResourceDatabasePopulator populator = new ResourceDatabasePopulator(context.getResource("classpath:/test-data.sql"));
 			DatabasePopulatorUtils.execute(populator, ds);
 			loadDataFixtures = false;
 		}
-	}
+	}*/
 
 	@Test
 	public void contextLoads() {
